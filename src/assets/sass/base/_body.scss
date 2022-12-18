@@ -1,9 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+@import '../utils/mixin';
 
 
 body{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-    padding: 27px 29px;
-    font-family: 'Montserrat'
+    font-family: 'Montserrat';
+    max-width : 1400px; 
+}
+
+@include portable{
+
+    body{
+        width: 100%;
+        margin: 0 auto;
+        font-family: 'Montserrat';
+        max-width :767px; 
+     
+       }
+    
+    
 }

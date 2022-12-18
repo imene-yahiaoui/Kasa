@@ -1,0 +1,59 @@
+@import'../base/body';
+@import'../utils/variables';
+@import '../utils/mixin';
+
+.header{
+ 
+    height: 87px;
+    margin: 20px 50px;
+   display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+
+}
+.logo{
+    width: 140px;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    width: 247px;
+    justify-content: space-between;
+
+}
+a{
+font-weight: 500;
+font-size: 25px;
+color: $color-primaire;
+
+
+
+}
+li{list-style-type:none;}
+
+@include portable{
+   .header{
+    padding: 0 25px;
+    margin: 0;
+   }
+    .logo{
+        width: 120px;
+    }
+    a{
+        font-size: 12px;
+        text-transform : uppercase;
+    }
+    .nav{
+        width: 140px;
+    }
+}
+
+
+@include portable_smal{
+    .nav{ width: 110px;
+    }
+    a{
+        font-size: 10px;
+    }
+}
