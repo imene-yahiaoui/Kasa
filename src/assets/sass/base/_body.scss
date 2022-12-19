@@ -1,23 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
-@import '../abstracts/mixin';
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+@import "../abstracts/mixin";
 
-
-body{
-    width: 100%;
-    margin: 0 auto;
-    font-family: 'Montserrat';
-    max-width : 1400px; 
+body {
+  margin: 0 auto;
+  font-family: "Montserrat";
+  max-width: 1400px;
 }
 
-@include portable{
-
-    body{
-        width: 100%;
-        margin: 0 auto;
-        font-family: 'Montserrat';
-        max-width :767px; 
-     
-       }
-    
-    
+@include portable {
+  body {
+    width: 100%;
+    margin: 0 auto;
+    font-family: "Montserrat";
+    max-width: 767px;
+  }
 }

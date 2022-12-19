@@ -1,0 +1,59 @@
+@import "../abstracts/variables";
+
+.collapse {
+  padding-top: 10px;
+  width: 93%;
+  height: auto;
+  //background-color: aquamarine;
+  margin: $margin;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.collapse-title {
+  width: 70%;
+  //width: 1023px;
+  height: 47px;
+  background-color: $color-primaire;
+  color: $color-Secondaire;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  font-size: 24px;
+  h6 {
+    font-size: 24px;
+    margin-left: 20px;
+  }
+  .fa-angle-up,
+  .fa-angle-down {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+}
+
+.collapse-article {
+  // display: none;
+  // width: 1023px;
+  width: 70%;
+  height: auto;
+  border-radius: 5px;
+  background-color: $color-gray;
+  display: flex;
+  align-items: center;
+
+  p {
+    font-size: 24px;
+    font-weight: 400;
+    font-family: Montserrat;
+    margin: 20px;
+    color: $color-primaire;
+  }
+}
+
+// @include portable{
+
+// }

@@ -1,14 +1,19 @@
 import Mountains from "../../assets/images/mountains.png";
-import Picture from "../home/Picture"; 
-const About=() =>{
-    
-    return(
- <div>
-<Picture img={Mountains}/>
+import Picture from "../home/Picture";
+import Collapses from "./collapses";
+import Speaces from "../utile/space";
 
- </div>
-    )
 
-}
 
-export default About
+
+const About = () => {
+  return (
+    <div>
+      <Picture img={Mountains} />
+      <Collapses />
+      <Speaces />
+    </div>
+  );
+};
+
+export default About;
