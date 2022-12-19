@@ -1,10 +1,12 @@
-
-
+import Mountains from "../../assets/images/mountains.png";
+import Picture from "../home/Picture"; 
 const About=() =>{
     
     return(
- 
-<h1>About</h1>
+ <div>
+<Picture img={Mountains}/>
+
+ </div>
     )
 
 }
