@@ -5,7 +5,7 @@ const Home =() =>{
     
     return(
  <div>
-<Picture img={Image} text="Chez vous, partout et ailleurs"/>
+<Picture img={Image} text= {<p>Chez vous, <span>partout et ailleurs</span></p>}/>
 
 
 

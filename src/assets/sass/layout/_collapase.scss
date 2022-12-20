@@ -1,11 +1,9 @@
 @import "../abstracts/variables";
-
+@import "../abstracts/mixin";
 .collapse {
   padding-top: 10px;
-  width: 93%;
+  width: 100%;
   height: auto;
-  //background-color: aquamarine;
-  margin: $margin;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -14,8 +12,7 @@
 
 .collapse-title {
   width: 70%;
-  //width: 1023px;
-  height: 47px;
+   height: 47px;
   background-color: $color-primaire;
   color: $color-Secondaire;
   display: flex;
@@ -36,8 +33,7 @@
 }
 
 .collapse-article {
-  // display: none;
-  // width: 1023px;
+ 
   width: 70%;
   height: auto;
   border-radius: 5px;
@@ -54,6 +50,10 @@
   }
 }
 
-// @include portable{
-
-// }
+@include portable{
+  .collapse-title,.collapse-article
+   {
+    width: 93%;
+  }
+   
+}

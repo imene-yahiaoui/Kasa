@@ -9,9 +9,20 @@ body {
 
 @include portable {
   body {
-    width: 100%;
+    
     margin: 0 auto;
     font-family: "Montserrat";
     max-width: 767px;
   }
+}
+
+@include portable_smal{
+    body {
+    margin: 0 auto; 
+    }
+}
+body {
+@include pour_tablet{
+    margin: 0 auto; 
+}
 }

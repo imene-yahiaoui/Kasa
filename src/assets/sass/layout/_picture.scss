@@ -1,32 +1,47 @@
-@import '../abstracts/variables';
-
-
-.home{
-    width: 1302px;
-    height: 223px;
-    margin: 20px 50px;
-     border-radius: 25px;
-    background: #00000067;
-    mix-blend-mode: darken;
+@import "../abstracts/variables";
+@import"../abstracts/mixin";
+.home {
+  width: 93%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  align-items: center;
+  // width: 1302px;
+  height: 223px;
+  // margin: 20px 50px;
+  border-radius: 25px;
+  background: #00000067;
+  mix-blend-mode: darken;
 }
-.home-img{
-  
-  width: 1302px;
- object-fit: fill;
-    height: 223px;
- border-radius: 25px;
- position: absolute;
- background: #000000;
- mix-blend-mode: darken;
-
+.home-img {
+  width: 100%;
+  object-fit: fill;
+  height: 223px;
+  border-radius: 25px;
+   background: #000000;
+  mix-blend-mode: darken;
 }
-.home-p{
-    font-weight: 500;
-font-size: 48px;
-color: white;
-align-items: center;
-display: flex;
-position: relative;
-justify-content: center;
-bottom: -70px;
+.home-p {
+  font-weight: 500;
+  font-size: 48px;
+  color: white;
+  align-items: center;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  bottom: 199px;
+}
+
+
+@include portable{
+  .home,.home-img {
+border-radius: 10px;
+  }
+  .home-p{
+    font-size: 24px;
+  justify-content: start;
+  padding-left: 30px;
+  }
+  span{
+    display: block;
+  }
 }

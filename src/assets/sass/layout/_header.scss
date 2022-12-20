@@ -1,59 +1,61 @@
-@import'../base/body';
-@import'../abstracts/variables';
-@import '../abstracts/mixin';
+@import "../base/body";
+@import "../abstracts/variables";
+@import "../abstracts/mixin";
 
-.header{
- 
-    height: 87px;
-    margin: 20px 50px;
-   display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-
+.header {
+  height: 87px;
+  margin: 20px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.logo{
-    width: 140px;
+.logo {
+  width: 140px;
 }
-.nav{
-    display: flex;
-    align-items: center;
-    width: 247px;
-    justify-content: space-between;
-
+.nav {
+  display: flex;
+  align-items: center;
+  width: 247px;
+  justify-content: space-between;
 }
-a{
-font-weight: 500;
-font-size: 25px;
-color: $color-primaire;
-
-
-
+a {
+  font-weight: 500;
+  font-size: 25px;
+  color: $color-primaire;
 }
-li{list-style-type:none;}
+li {
+  list-style-type: none;
+}
 
-@include portable{
-   .header{
+@include portable {
+  .header {
     padding: 0 25px;
     margin: 0;
-   }
-    .logo{
-        width: 120px;
-    }
-    a{
-        font-size: 12px;
-        text-transform : uppercase;
-    }
-    .nav{
-        width: 140px;
-    }
+  }
+  .logo {
+    width: 120px;
+  }
+  a {
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  .nav {
+    width: 190px;
+  }
 }
 
-
-@include portable_smal{
-    .nav{ width: 110px;
-    }
-    a{
-        font-size: 10px;
-    }
+@include portable_smal {
+  .nav {
+    width: 110px;
+  }
+  a {
+    font-size: 10px;
+  }
+  .logo {
+    width: 100px;
+  }
+  li {
+    width: 56px;
+  }
 }
