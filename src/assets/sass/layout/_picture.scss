@@ -5,10 +5,8 @@
   margin: 0 auto;
   margin-bottom: 20px;
   align-items: center;
-  // width: 1302px;
-  height: 223px;
-  // margin: 20px 50px;
-  border-radius: 25px;
+   height: 223px;
+    border-radius: 25px;
   background: #00000067;
   mix-blend-mode: darken;
 }
@@ -28,7 +26,7 @@
   display: flex;
   position: relative;
   justify-content: center;
-  bottom: 199px;
+  bottom: 250px;
 }
 
 
@@ -40,6 +38,7 @@ border-radius: 10px;
     font-size: 24px;
   justify-content: start;
   padding-left: 30px;
+  bottom: 200px;
   }
   span{
     display: block;

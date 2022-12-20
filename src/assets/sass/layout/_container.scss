@@ -1,0 +1,15 @@
+@import "../abstracts/variables";
+
+.container {
+  width: 90%;
+  height: auto;
+  background-color: #f7f7f7;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 60px 20px;
+  row-gap: 10px;
+  justify-items: center;
+}
