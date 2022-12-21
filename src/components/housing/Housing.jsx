@@ -1,9 +1,9 @@
-
+import CollapseHousing from "./CollapseHousing"
 
 const Housing =() =>{
     
     return(
-<h1>Housing</h1>
+<CollapseHousing />
     )
 
 }
