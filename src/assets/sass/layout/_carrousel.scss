@@ -1,0 +1,24 @@
+@import "../abstracts/variables";
+
+.carousel {
+  width: 94%;
+  height: 415px;
+  background-color: antiquewhite;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+.carousel-img {
+  width: 100%;
+  height: 415px;
+  border-radius: 25px;
+
+}
+
+.carousel-notes {
+  color: $color-Secondaire;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: -332px;
+  font-size: 18px;
+}

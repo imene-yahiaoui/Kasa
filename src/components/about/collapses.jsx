@@ -26,7 +26,7 @@ const data = [
 
 const Collapses = () => {
   return (
-    <div>
+    <div className="collapse_continer">
       {data.map((boucle) => (
         <Collapse title={boucle.title} text={boucle.text} key={boucle.key} />
       ))}

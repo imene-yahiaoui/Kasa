@@ -1,0 +1,39 @@
+@import "../abstracts/variables";
+.info {
+  margin: 0 auto;
+   display: flex;
+  width: 93%;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+.info_utilisateur_name,
+.info_titre_localitation,
+.info_titre {
+  font-size: 36px;
+  color: $color-primaire;
+  font-weight: 500;
+}
+.info_utilisateur_name,
+.info_titre_localitation {
+  font-size: 18px;
+}
+
+.info_utilisateur {
+  display: flex;
+  flex-direction: row;
+  width: min-content;
+  column-gap: 20px;
+  justify-content: flex-end;
+  align-items: center;
+}
+.info_utilisateur_img {
+  background-color: $color-gray;
+  width: 100px;
+  height: 100px;
+  border-radius: 51px;
+}
+.info_utilisateur_name {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+}

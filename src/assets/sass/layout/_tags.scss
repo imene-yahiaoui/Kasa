@@ -1,0 +1,19 @@
+@import "../abstracts/variables";
+
+.tag {
+  background: $color-primaire;
+  color: $color-Secondaire;
+  border-radius: 14px;
+  padding: 9px 50px;
+  width: min-content;
+  font-size: 14px;
+}
+.fa-star {
+  font-size: 30px;
+  color: aqua;
+}
+.stars {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+}

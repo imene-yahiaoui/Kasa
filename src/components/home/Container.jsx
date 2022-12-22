@@ -1,8 +1,8 @@
 import "../../assets/sass/layout/_container.scss";
 import Frame from "./Frame";
+ 
 
-
-import {useEffect,useState} from "react";
+ import {useEffect,useState} from "react";
   
 
 const Container = () => {
@@ -18,6 +18,11 @@ return reponse.json()
  })
  
 },[])
+
+
+
+
+
 
   return (
     <div className="container">

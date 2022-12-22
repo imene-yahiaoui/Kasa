@@ -2,13 +2,15 @@ import Collapse from "../about/collapse";
 import "../../assets/sass/layout/_collapse_housing.scss";
 
 
-const Collapse_housing = (props) => {
+
+
+const CollapseEquipements = (props) => {
   return (
     <div className="collapse_housing">
-    <Collapse title={"description"} text={props.text} />
-   
+    <Collapse title={"Équipements"} text={props.text} />
+    
     </div>
   );
 };
 
-export default Collapse_housing;
+export default CollapseEquipements;
