@@ -1,0 +1,34 @@
+@import "../abstracts/variables";
+
+.collapseHosing {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.fa-angle-left,
+.fa-angle-right {
+  color: $color-Secondaire;
+  font-size: 120px;
+  position: absolute;
+  top: 350px;
+  z-index: 1;
+  cursor: pointer;
+  transform: translate(0,-50%);
+}
+.fa-angle-left {
+  left: 140px;
+}
+.fa-angle-right {
+  right: 140px;
+}
+
+.carousel-notes {
+  color: $color-Secondaire;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 69px;
+  font-size: 18px;
+}
