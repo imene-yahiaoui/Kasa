@@ -142,7 +142,7 @@ const colorr={
         <Stars
         key={rating}
         color={Rating > rating? colorr.red : colorr.grey} 
-        // color={colorr.red}
+       
         />
     )
 })} </div>

@@ -1,12 +1,12 @@
 @import "../abstracts/variables";
-@import"../abstracts/mixin";
+@import "../abstracts/mixin";
 .home {
   width: 93%;
   margin: 0 auto;
   margin-bottom: 20px;
   align-items: center;
-   height: 223px;
-    border-radius: 25px;
+  height: 223px;
+  border-radius: 25px;
   background: #00000067;
   mix-blend-mode: darken;
 }
@@ -15,7 +15,7 @@
   object-fit: fill;
   height: 223px;
   border-radius: 25px;
-   background: #000000;
+  background: #000000;
   mix-blend-mode: darken;
 }
 .home-p {
@@ -26,21 +26,21 @@
   display: flex;
   position: relative;
   justify-content: center;
-  bottom: 250px;
+  bottom: 190px;
 }
 
-
-@include portable{
-  .home,.home-img {
-border-radius: 10px;
+@include portable {
+  .home,
+  .home-img {
+    border-radius: 10px;
   }
-  .home-p{
+  .home-p {
     font-size: 24px;
-  justify-content: start;
-  padding-left: 30px;
-  bottom: 200px;
+    justify-content: start;
+    padding-left: 30px;
+    bottom: 200px;
   }
-  span{
+  span {
     display: block;
   }
 }
