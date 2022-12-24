@@ -66,8 +66,22 @@ const Housing = () => {
       .map((data) => tag.push(<Tag tags={data.tags[i]} key={i} />));
       }
 
- 
-
+      user
+      .filter((data) => data.id === id)
+      .map((data) =>
+console.log (data.rating)
+      )
+const Rating= user
+.filter((data) => data.id === id)
+.map((data) =>data.rating)
+     console.log("Ratting",Rating)
+const stars= Array(5).fill(0)
+// const [color,setColor] = useState("red")
+const colorr={
+    grey:"#f6f6f6",
+    red:"#ff6060"
+   
+   }
   return (
     <div>
       <div>
@@ -123,8 +137,15 @@ const Housing = () => {
         ))}
 <div className="containerTagStars">
       <ul className="tags">{tag}</ul>
-<Stars/>
-
+<div className="star"  >{stars.map((_,rating)=>{
+    return(
+        <Stars
+        key={rating}
+        color={Rating > rating? colorr.red : colorr.grey} 
+        // color={colorr.red}
+        />
+    )
+})} </div>
       </div>
       <div className="collapseHosing">
         {user

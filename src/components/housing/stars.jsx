@@ -8,11 +8,8 @@ const Stars = (props) => {
 
 <div className="stars">
 
-<i className="fa-sharp fa-solid fa-star"></i>
-<i className="fa-sharp fa-solid fa-star"></i>
-<i className="fa-sharp fa-solid fa-star"></i>
-<i className="fa-sharp fa-solid fa-star"></i>
-<i className="fa-sharp fa-solid fa-star"></i>
+<i style={{color:props.color}} className="fa-sharp fa-solid fa-star"></i>
+
 
         </div>
         </div>
