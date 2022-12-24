@@ -1,0 +1,13 @@
+@import "../../sass/abstracts/variables";
+
+
+.fa-star {
+    font-size: 30px;
+    color: $color-gray;
+  }
+  .stars {
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+  }
+  

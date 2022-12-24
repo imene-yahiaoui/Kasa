@@ -1,4 +1,5 @@
-// import"../../assets/sass/layout/_tags.scss";
+import"../../assets/sass/layout/_stars.scss";
+
 
 const Stars = (props) => {
   

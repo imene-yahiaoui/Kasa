@@ -32,3 +32,16 @@
   bottom: 69px;
   font-size: 18px;
 }
+.tags{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+.containerTagStars{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 97%;
+    
+}
