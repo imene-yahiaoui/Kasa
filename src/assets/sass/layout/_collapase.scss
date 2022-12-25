@@ -49,6 +49,10 @@
     margin: 20px;
     color: $color-primaire;
   }
+  .ArryText{
+display: flex;
+flex-direction: column;
+  }
 }
 .collapse_continer{
   width: 90%;

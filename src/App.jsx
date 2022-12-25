@@ -5,15 +5,24 @@ import Home from "./components/home/Home";
 import Housing from "./components/housing/Housing";
 import About from "./components/about/About";
 import NotFound from "./components/notFound/NotFound";
-
+import { useEffect, useState } from "react";
 
 const App = () => {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    fetch("../../data.json")
+      .then((reponse) => reponse.json())
+      .then((data) => {
+        setPosts(data);
+      });
+  }, []);
+
   return (
     <div>
       <Header />
       <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="/Housing/:id" element={<Housing />} />
+        <Route path="/" exact element={<Home posts={posts} />} />
+        <Route path="/Housing/:id" element={<Housing posts={posts} />} />
         <Route path="/About" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

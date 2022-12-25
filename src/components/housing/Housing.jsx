@@ -1,29 +1,16 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Carrousel from "./carrousel";
 import Info from "./info";
 import Tag from "./tag";
-import CollapseEquipements from "./collapseEquipements";
-import CollapseHousing from "./CollapseHousing";
 import "../../assets/sass/pages/_Housing.scss";
 import Stars from "./stars";
+import Collapse from "../about/collapse";
 
-const Housing = () => {
-  const [user, setUsers] = useState([]);
-  useEffect(() => {
-    fetch("../../data.json")
-      .then((reponse) => {
-        return reponse.json();
-      })
-      .then((data) => {
-        setUsers(data);
-      });
-  }, []);
-
+const Housing = ({ posts }) => {
   const { id } = useParams();
-  console.log(id);
 
-  const slidesLenghth = user
+  const slidesLenghth = posts
     .filter((data) => data.id === id)
     .map((data) => data.pictures.length);
   const [index, setCurrentindex] = useState(0);
@@ -55,37 +42,34 @@ const Housing = () => {
   document.addEventListener("keydown", keyclavier);
 
   ///tagLenght
-  const tagLength = user
+  const tagLength = posts
     .filter((data) => data.id === id)
     .map((data) => data.tags.length);
 
   const tag = [];
   for (let i = 0; i <= tagLength - 1; i++) {
-    user
+    posts
       .filter((data) => data.id === id)
       .map((data) => tag.push(<Tag tags={data.tags[i]} key={i} />));
-      }
+  }
 
-      user
-      .filter((data) => data.id === id)
-      .map((data) =>
-console.log (data.rating)
-      )
-const Rating= user
-.filter((data) => data.id === id)
-.map((data) =>data.rating)
-     console.log("Ratting",Rating)
-const stars= Array(5).fill(0)
-// const [color,setColor] = useState("red")
-const colorr={
-    grey:"#f6f6f6",
-    red:"#ff6060"
-   
-   }
+  posts
+    .filter((data) => data.id === id)
+    .map((data) => console.log(data.rating));
+  const Rating = posts
+    .filter((data) => data.id === id)
+    .map((data) => data.rating);
+  console.log("Ratting", Rating);
+  const stars = Array(5).fill(0);
+
+  const colorr = {
+    grey: "#f6f6f6",
+    red: "#ff6060",
+  };
   return (
     <div>
       <div>
-        {user
+        {posts
           .filter((data) => data.id === id)
           .map((data) => (
             <i
@@ -95,7 +79,7 @@ const colorr={
               onClick={goToPrevious}
             ></i>
           ))}
-        {user
+        {posts
           .filter((data) => data.id === id)
           .map((data) => (
             <i
@@ -106,13 +90,13 @@ const colorr={
             ></i>
           ))}
 
-        {user
+        {posts
           .filter((data) => data.id === id)
           .map((data) => (
             <Carrousel slides={data.pictures[index]} key={data.id} />
           ))}
 
-        {user
+        {posts
           .filter((data) => data.id === id)
           .map((data) => (
             <p
@@ -124,7 +108,7 @@ const colorr={
             </p>
           ))}
       </div>
-      {user
+      {posts
         .filter((data) => data.id === id)
         .map((data) => (
           <Info
@@ -135,30 +119,39 @@ const colorr={
             name={data.host.name}
           />
         ))}
-<div className="containerTagStars">
-      <ul className="tags">{tag}</ul>
-<div className="star"  >{stars.map((_,rating)=>{
-    return(
-        <Stars
-        key={rating}
-        color={Rating > rating? colorr.red : colorr.grey} 
-       
-        />
-    )
-})} </div>
+
+      <div className="containerTagStars">
+        <ul className="tags">{tag}</ul>
+        <div className="star">
+          {stars.map((_, rating) => {
+            return (
+              <Stars
+                key={rating}
+                color={Rating > rating ? colorr.red : colorr.grey}
+              />
+            );
+          })}{" "}
+        </div>
       </div>
       <div className="collapseHosing">
-        {user
+        {posts
           .filter((data) => data.id === id)
           .map((data) => (
-            <CollapseHousing text={data.description} key={data.id} />
+            <Collapse
+              title={"description"}
+              text={data.description}
+              key={data.id}
+            />
           ))}
-        {user
+        {posts
           .filter((data) => data.id === id)
           .map((data) => (
-            <CollapseEquipements text={data.equipments} key={data.id} />
+            <Collapse
+              title={"Équipements"}
+              ArryText={data.equipments[0]}
+              key={data.id}
+            />
           ))}
-
       </div>
     </div>
   );

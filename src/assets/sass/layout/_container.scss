@@ -1,5 +1,5 @@
 @import "../abstracts/variables";
-
+@import "../abstracts/mixin";
 .container {
   width: 90%;
   height: auto;
@@ -12,4 +12,9 @@
   padding: 60px 20px;
   row-gap: 10px;
   justify-items: center;
+}
+@include portable {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
