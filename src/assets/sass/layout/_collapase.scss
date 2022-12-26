@@ -36,14 +36,14 @@
 .collapse-article {
  
   width:  88%;
-  height: auto;
-  border-radius: 5px;
+   border-radius: 5px;
   background-color: $color-gray;
   display: flex;
   align-items: center;
+  height: 200px;
 
   p {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 400;
     font-family: Montserrat;
     margin: 20px;
@@ -52,6 +52,10 @@
   .ArryText{
 display: flex;
 flex-direction: column;
+color: $color-primaire;
+font-size: 18px;
+align-items: flex-start;
+margin: 20px;
   }
 }
 .collapse_continer{

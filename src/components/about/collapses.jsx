@@ -1,4 +1,4 @@
-import Collapse from "./collapse";
+import Collapse from "../utile/collapse";
 
 const data = [
   {
