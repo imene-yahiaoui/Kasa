@@ -1,15 +1,29 @@
-import { useParams } from "react-router-dom";
 import { useState } from "react";
-import Carrousel from "./carrousel";
-import Info from "./info";
-import Tag from "./tag";
+import { useNavigate, useParams } from "react-router-dom";
+import Carrousel from "./Carrousel";
+import Info from "./Info";
+import Tag from "./Tag";
 import "../../assets/sass/pages/_Housing.scss";
-import Stars from "./stars";
-import Collapse from "../utile/collapse";
+import Stars from "./Stars";
+import Collapse from "../utile/Collapse";
 import Host from "./Host";
 
 const Housing = ({ posts }) => {
   const { id } = useParams();
+
+  ///If id is incorrect
+  const Navigate = useNavigate();
+
+  //  useEffect(() => {
+  const list = posts.map((data) => data.id);
+  let foundID = 0;
+  for (let item = 0; item <= list.length - 1; item++) {
+    if (id === list[item]) {
+      foundID = 1;
+    }
+  }
+  foundID === 1 ? console.log("existe") : Navigate("/Notfound");
+  // });
 
   const slidesLenghth = posts
     .filter((data) => data.id === id)
@@ -66,7 +80,13 @@ const Housing = ({ posts }) => {
 
   return (
     <div>
-      <div>
+      <div className="carrousel_imgs">
+        {posts
+          .filter((data) => data.id === id)
+          .map((data) => (
+            <Carrousel slides={data.pictures[index]} key={data.id} />
+          ))}
+
         {posts
           .filter((data) => data.id === id)
           .map((data) => (
@@ -91,12 +111,6 @@ const Housing = ({ posts }) => {
         {posts
           .filter((data) => data.id === id)
           .map((data) => (
-            <Carrousel slides={data.pictures[index]} key={data.id} />
-          ))}
-
-        {posts
-          .filter((data) => data.id === id)
-          .map((data) => (
             <p
               style={{ display: data.pictures.length === 1 ? "none" : "flex" }}
               key={data.id}
@@ -106,46 +120,41 @@ const Housing = ({ posts }) => {
             </p>
           ))}
       </div>
-<div className="containerInfo">
-      <div className="containerTagInfo">
-        {posts
-          .filter((data) => data.id === id)
-          .map((data) => (
-            <Info title={data.title} location={data.location} key={data.id} />
-          ))}
+      <div className="containerInfo">
+        <div className="containerTagInfo">
+          {posts
+            .filter((data) => data.id === id)
+            .map((data) => (
+              <Info title={data.title} location={data.location} key={data.id} />
+            ))}
 
-        <ul className="tags">{tag}</ul>
-      </div>
-
-
-      <div className="containerHostStars">
-
-        <div className="host">
-      {posts
-        .filter((data) => data.id === id)
-        .map((data) => (
-          <Host
-            key={data.id}
-            picture={data.host.picture}
-            name={data.host.name}
-          />
-        ))}
-        </div>
-      <div className="star">
-        {stars.map((_, rating) => {
-          return (
-            <Stars
-              key={rating}
-              color={Rating > rating ? colorr.red : colorr.grey}
-            />
-          );
-        })}
+          <ul className="tags">{tag}</ul>
         </div>
 
-        
+        <div className="containerHostStars">
+          <div className="host">
+            {posts
+              .filter((data) => data.id === id)
+              .map((data) => (
+                <Host
+                  key={data.id}
+                  picture={data.host.picture}
+                  name={data.host.name}
+                />
+              ))}
+          </div>
+          <div className="star">
+            {stars.map((_, rating) => {
+              return (
+                <Stars
+                  key={rating}
+                  color={Rating > rating ? colorr.red : colorr.grey}
+                />
+              );
+            })}
+          </div>
+        </div>
       </div>
-      </div>
-
 
       <div className="collapseHosing">
         {posts

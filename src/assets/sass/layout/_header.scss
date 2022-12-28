@@ -15,12 +15,17 @@
 .nav {
   display: flex;
   align-items: center;
-  width: 247px;
+  width: 286px;
   justify-content: space-between;
 }
 a {
   font-weight: 500;
   font-size: 25px;
+  color: $color-primaire;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
   color: $color-primaire;
 }
 li {
@@ -33,15 +38,15 @@ li {
     margin: 0;
   }
   .logo {
-    width: 120px;
+    width: 110px;
   }
   a {
-    font-size: 16px;
+    font-size: 14px;
     text-transform: uppercase;
   }
 
   .nav {
-    width: 190px;
+    width: 200px;
   }
 }
 
@@ -58,4 +63,8 @@ li {
   li {
     width: 56px;
   }
+}
+@include portable_medium{
+  .nav {
+    width: 156px;}
 }

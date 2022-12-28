@@ -1,9 +1,11 @@
 @import "../abstracts/variables";
 .info {
   margin: 0 auto;
-   display: flex;
+  display: flex;
   width: 93%;
   flex-direction: column;
+  margin-bottom: -27px;
+  margin-top: -19px;
 }
 
 .info_titre_localitation,
@@ -12,8 +14,9 @@
   color: $color-primaire;
   font-weight: 500;
 }
-
+.info_titre {
+  margin-bottom: -18px;
+}
 .info_titre_localitation {
   font-size: 18px;
 }
-

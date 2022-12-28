@@ -1,4 +1,5 @@
 @import "../abstracts/variables";
+@import "../abstracts/mixin";
 
 .carousel {
   width: 94%;
@@ -13,4 +14,22 @@
   background-size: cover;
   background-position: center;
   border-radius: 25px;
+}
+
+@include pour_tablet {
+  .carousel {
+    height: 350px;
+  }
+}
+
+@include portable {
+  .carousel {
+    height: 255px;
+  }
+}
+
+@include portable_smal {
+}
+
+@include portable_medium {
 }

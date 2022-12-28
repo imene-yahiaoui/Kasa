@@ -9,7 +9,10 @@ const Picture =(props) =>{
       
  <div className="home">
    <img className="home-img" src={props.img} alt ="natur"></img>
-    <p className="home-p"> {props.text}</p>
+   <div className="home-p" >
+    <p className="home-text"> {props.text}</p>
+    <p className="home-paragraphe"> {props.paragraphe}</p>
+    </div>
  </div>
 
     )

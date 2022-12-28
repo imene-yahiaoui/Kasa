@@ -6,6 +6,8 @@ import Housing from "./components/housing/Housing";
 import About from "./components/about/About";
 import NotFound from "./components/notFound/NotFound";
 import { useEffect, useState } from "react";
+// import { Link } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 const App = () => {
   const [posts, setPosts] = useState([]);

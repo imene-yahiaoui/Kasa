@@ -8,20 +8,20 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 15px
+  padding-bottom: 15px;
 }
 
 .collapse-title {
-  width:  88%;
-   height: 47px;
+  width: 88%;
+  height: 47px;
   background-color: $color-primaire;
   color: $color-Secondaire;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border-radius: 5px;
   font-size: 24px;
+  border-radius: 10px;
   h6 {
     font-size: 24px;
     margin-left: 20px;
@@ -34,13 +34,15 @@
 }
 
 .collapse-article {
- 
-  width:  88%;
-   border-radius: 5px;
+  width: 88%;
   background-color: $color-gray;
   display: flex;
   align-items: center;
-  height: 200px;
+  // height: 200px;
+  border-radius: 10px;
+  margin-top: -9px;
+  z-index: -1;
+  padding-top: 20px;
 
   p {
     font-size: 18px;
@@ -49,25 +51,34 @@
     margin: 20px;
     color: $color-primaire;
   }
-  .ArryText{
-display: flex;
-flex-direction: column;
-color: $color-primaire;
-font-size: 18px;
-align-items: flex-start;
-margin: 20px;
+  .ArryText {
+    display: flex;
+    flex-direction: column;
+    color: $color-primaire;
+    font-size: 18px;
+    align-items: flex-start;
   }
 }
-.collapse_continer{
+.collapse_continer {
   width: 90%;
   margin: 0 auto;
-
 }
 
-@include portable{
-  .collapse-title,.collapse-article
-   {
+@include portable {
+  .collapse-title,
+  .collapse-article {
     width: 93%;
   }
-   
+  .collapse_continer {
+    width: 100%;
+  }
+
+  .collapse-title h6 {
+    font-size: 13px;
+  }
+  .collapse-article {
+    p {
+      font-size: 13px;
+    }
+  }
 }

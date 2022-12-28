@@ -2,10 +2,12 @@ import Picture from "./Picture";
 import Image from "../../assets/images/IMG.png";
 import Frame from "./Frame";
 import "../../assets/sass/layout/_container.scss";
+
 const Home = ({ posts }) => {
   return (
     <div>
-      <Picture img={Image} text="Chez vous,partout et ailleurs" />
+      <Picture img={Image} text="Chez vous," paragraphe="partout et ailleurs" />
+
       <div className="container">
         {posts.map((post) => (
           <Frame
