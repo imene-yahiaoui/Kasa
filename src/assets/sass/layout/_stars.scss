@@ -1,5 +1,5 @@
 @import "../../sass/abstracts/variables";
-
+@import "../abstracts/mixin";
 
 .fa-star {
     font-size: 30px;
@@ -7,3 +7,9 @@
   }
   
   
+
+  @include portable_smal {
+  .fa-star {
+    font-size: 15px;
+}
+  }

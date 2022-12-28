@@ -6,8 +6,6 @@ import Housing from "./components/housing/Housing";
 import About from "./components/about/About";
 import NotFound from "./components/notFound/NotFound";
 import { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
-// import { useParams } from "react-router-dom";
 
 const App = () => {
   const [posts, setPosts] = useState([]);
@@ -27,6 +25,7 @@ const App = () => {
         <Route path="/Housing/:id" element={<Housing posts={posts} />} />
         <Route path="/About" element={<About />} />
         <Route path="*" element={<NotFound />} />
+      
       </Routes>
       <Footer />
     </div>

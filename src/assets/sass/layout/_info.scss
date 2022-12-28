@@ -1,9 +1,9 @@
 @import "../abstracts/variables";
+@import "../abstracts/mixin";
 .info {
   margin: 0 auto;
   display: flex;
-  width: 93%;
-  flex-direction: column;
+   flex-direction: column;
   margin-bottom: -27px;
   margin-top: -19px;
 }
@@ -19,4 +19,23 @@
 }
 .info_titre_localitation {
   font-size: 18px;
+}
+
+
+@include portable{
+
+
+.info{
+  margin-left: 0;
+}
+.info_titre {
+  margin-bottom: 4px;}
+
+}
+
+@include portable_smal {
+  .info_titre_localitation,
+.info_titre {
+  font-size: 18px;}
+
 }

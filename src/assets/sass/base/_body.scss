@@ -5,25 +5,23 @@ body {
   margin: 0 auto;
   font-family: "Montserrat";
   max-width: 1400px;
- 
 }
 
 @include portable {
   body {
-    
     margin: 0 auto;
     font-family: "Montserrat";
     max-width: 767px;
   }
 }
 
-@include portable_smal{
-    body {
-    margin: 0 auto; 
-    }
+@include portable_smal {
+  body {
+    margin: 0 auto;
+  }
 }
 body {
-@include pour_tablet{
-    margin: 0 auto; 
-}
+  @include pour_tablet {
+    margin: 0 auto;
+  }
 }

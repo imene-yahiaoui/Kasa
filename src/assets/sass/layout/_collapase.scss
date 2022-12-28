@@ -50,13 +50,18 @@
     font-family: Montserrat;
     margin: 20px;
     color: $color-primaire;
+    line-height: 25.67px;
   }
   .ArryText {
+    font-weight: 400;
+    font-family: Montserrat;
     display: flex;
     flex-direction: column;
     color: $color-primaire;
     font-size: 18px;
     align-items: flex-start;
+    // row-gap: 8px;
+    line-height: 25.67px;
   }
 }
 .collapse_continer {
@@ -77,6 +82,7 @@
     font-size: 13px;
   }
   .collapse-article {
+    .ArryText,
     p {
       font-size: 13px;
     }
