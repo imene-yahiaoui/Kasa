@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Carrousel from "./Carrousel";
-import Info from "./Info";
-import Tag from "./Tag";
+import Carrousel from "./carrousel";
+import Info from "./info";
+import Tag from "./tag";
 import "../../assets/sass/pages/_Housing.scss";
-import Stars from "./Stars";
-import Collapse from "../utile/Collapse";
+import Stars from "./stars";
+import Collapse from "../utile/collapse";
 import Host from "./Host";
 
 const Housing = ({ posts }) => {

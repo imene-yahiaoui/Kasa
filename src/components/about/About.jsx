@@ -1,6 +1,6 @@
 import Mountains from "../../assets/images/mountains.png";
 import Picture from "../home/Picture";
-import Collapses from "./Collapses";
+import Collapses from "./collapses";
 import Imagphon from "../../assets/images/imgMobil.png";
 import useMediaQuery from "../utile/MediaQuery";
 import "../../assets/sass/pages/_about.scss";
