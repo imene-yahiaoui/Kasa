@@ -10,13 +10,12 @@
   margin-left: -2px;
 }
 
-
-
 @include portable_smal {
-.tag {
+  .tag {
+    font-size: 12px;
+  }
 
-  font-size: 10px;
-}
-
- 
+  .tag-container {
+    max-width: 40%;
+  }
 }

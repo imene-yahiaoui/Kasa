@@ -3,7 +3,7 @@ import "../../assets/sass/layout/_info.scss";
 
 const Tag = (props) => {
   return (
-    <li>
+    <li className="tag-container">
       <p className="tag">{props.tags}</p>
     </li>
   );
