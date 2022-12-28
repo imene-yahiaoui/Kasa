@@ -61,10 +61,23 @@ li {
     width: 100px;
   }
   li {
-    width: 56px;
+    width: 66%;
   }
 }
-@include portable_medium{
+@include portable_medium {
   .nav {
-    width: 156px;}
+    width: 156px;
+  }
+}
+
+@media only screen and (max-width: 349px) {
+  .logo {
+    width: 70px;
+  }
+  a {
+    font-size: 6px;
+  }
+  li {
+    width: 43%;
+  }
 }
