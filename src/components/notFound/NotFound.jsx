@@ -2,7 +2,7 @@ import notFound from "../../assets/images/404.png";
 import { Link } from "react-router-dom";
 import "../../assets/sass/pages/_noutFound.scss";
 
-const NotFound = () => {
+const NotFound = () => { 
   return (
     <div className="notFound">
       <img className="notFound-img" src={notFound} alt="logo 404"></img>

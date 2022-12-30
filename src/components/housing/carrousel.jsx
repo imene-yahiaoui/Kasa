@@ -1,11 +1,11 @@
 import "../../assets/sass/layout/_carrousel.scss";
 
-const Carrousel = (props) => {
+const Carrousel = ({slides}) => {
   return (
     <div className="carousel">
       <div
         className="carousel-img"
-        style={{ backgroundImage: `url(${props.slides})` }}
+        style={{ backgroundImage: `url(${slides})` }}
       ></div>
     </div>
   );

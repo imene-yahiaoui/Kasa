@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import {  useLocation } from "react-router-dom";
 import Carrousel from "./carrousel";
 import Info from "./info";
 import Tag from "./tag";
@@ -7,23 +7,24 @@ import "../../assets/sass/pages/_Housing.scss";
 import Stars from "./stars";
 import Collapse from "../utile/collapse";
 import Host from "./Host";
+import NotFound from "../notFound/NotFound";
 
 const Housing = ({ posts }) => {
-  const { id } = useParams();
+  
 
-  ///If id is incorrect
-  const Navigate = useNavigate();
+  const linkUrl = useLocation();
+  console.log(linkUrl)
+  const idLinkUrl = posts.filter((item) =>item.id === linkUrl.pathname.substring(9));
 
-  //  useEffect(() => {
-  const list = posts.map((post) => post.id);
-  let foundID = 0;
-  for (let item = 0; item <= list.length - 1; item++) {
-    if (id === list[item]) {
-      foundID = 1;
-    }
-  }
-  foundID === 1 ? console.log("existe") : Navigate("/Notfound");
-  // });
+ 
+  console.log(linkUrl.pathname.substring(9))
+
+ const id= linkUrl.pathname.substring(9)
+ console.log("id=========",id)
+ console.log("idLinkUrl=========",idLinkUrl)
+ console.log("linkUrll=========",linkUrl)
+
+
 
   const slidesLenghth = posts
     .filter((post) => post.id === id)
@@ -77,8 +78,13 @@ const Housing = ({ posts }) => {
     grey: "#f6f6f6",
     red: "#ff6060",
   };
-
+console.log(idLinkUrl.length)
   return (
+
+    idLinkUrl.length > 0 ? (
+     
+
+
     <div>
       <div className="carrousel_imgs">
         {posts
@@ -179,6 +185,10 @@ const Housing = ({ posts }) => {
           ))}
       </div>
     </div>
+
+  ) : ( <NotFound />
+         )
+
   );
 };
 
