@@ -1,6 +1,9 @@
 Lancement le serveure:
+
+
 npm install
 npm start
+
 Le projet doit se lancer dans votre navigateur et tourner sur votre serveur local:3000
 
 
