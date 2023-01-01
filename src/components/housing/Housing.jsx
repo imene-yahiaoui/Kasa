@@ -119,7 +119,7 @@ const Housing = ({ posts }) => {
               .map((post) => (
                 <Carrousel slides={post.pictures[index]} key={post.id} />
               ))}
-            <div className="carrousel_icones">
+           
               {posts
                 .filter((post) => post.id === id)
                 .map((post) => (
@@ -158,7 +158,7 @@ const Housing = ({ posts }) => {
                     {[index + 1]}/{post.pictures.length}
                   </p>
                 ))}
-            </div>
+           
           </div>
           <div className="containerInfo">
             <div className="containerTagInfo">

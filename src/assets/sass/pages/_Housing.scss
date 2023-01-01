@@ -13,31 +13,33 @@
 .fa-angle-right {
   color: $color-Secondaire;
   font-size: 120px;
-  position: relative;
+  position: absolute;
   z-index: 1;
   cursor: pointer;
   transform: translate(0, -50%);
 }
 .fa-angle-left {
-  left: 84%;
-  top: -215px;
+  left: 57px;
+  top: 204px;
 }
 .fa-angle-right {
-  top: -334px;
-  left: 1264px;
+  top: 204px;
+  left: 1261px;
 }
 
 .carrousel_imgs {
   height: 415px;
+  position: relative;
 }
 
 .carousel-notes {
   color: $color-Secondaire;
   display: flex;
   justify-content: center;
-  position: relative;
-  bottom: 306px;
-  font-size: 18px;
+  position: absolute;
+  bottom: 7px;
+  font-size: 24px;
+  right: 657px;
 }
 .tags {
   display: flex;
@@ -78,42 +80,42 @@
   .carrousel_imgs {
     height: 350px;
   }
+
   .fa-angle-left,
   .fa-angle-right {
-    font-size: 70px;
-  }
-  .carousel-notes {
-    bottom: 205px;
-  }
-
-  .fa-angle-left {
-    left: 5%;
-    top: -52%;
+    font-size: 100px;
   }
   .fa-angle-right {
-    right: -91%;
-    top: -72%;
+    left: 87%;
+    top: 49%;
+  }
+  .fa-angle-left {
+    left: 5%;
+    top: 49%;
+  }
+  .carousel-notes {
+    left: 52%;
+    top: 79%;
   }
 }
 
 @include portable {
   .fa-angle-left,
   .fa-angle-right {
-    font-size: 51px;
-  }
-  .carousel-notes {
-    position: absolute;
-    left: 676px;
-    bottom: 252px;
-  }
-
-  .fa-angle-left {
-    left: 5%;
-    top: -52%;
+    font-size: 80px;
   }
   .fa-angle-right {
-    right: -91%;
-    top: -72%;
+    left: 85%;
+    top: 49%;
+  }
+  .fa-angle-left {
+    left: 5%;
+    top: 49%;
+  }
+  .carousel-notes {
+    left: 52%;
+    top: 74%;
+    font-size: 23px;
   }
 
   .containerInfo {
@@ -134,8 +136,22 @@
 }
 
 @include portable_smal {
+  .fa-angle-left,
   .fa-angle-right {
-    right: -86%;
+    font-size: 40px;
+  }
+  .fa-angle-right {
+    left: 85%;
+    top: 49%;
+  }
+  .fa-angle-left {
+    left: 5%;
+    top: 49%;
+  }
+  .carousel-notes {
+    left: 52%;
+    top: 83%;
+    font-size: 13px;
   }
 
   .tags {
@@ -144,23 +160,50 @@
 }
 
 @include portable_medium {
+  .fa-angle-left,
   .fa-angle-right {
-    right: -88%;
+    font-size: 80px;
   }
-
+  .fa-angle-right {
+    left: 85%;
+    top: 49%;
+  }
+  .fa-angle-left {
+    left: 5%;
+    top: 49%;
+  }
   .carousel-notes {
-    bottom: 165px;
+    left: 52%;
+    top: 70%;
   }
 }
 
-@media only screen and (min-width: 451px) and (max-width: 500px) {
+@media only screen and (min-width: 604px) and (max-width: 760px) {
   .fa-angle-right {
-    right: -88%;
+    left: 88%;
   }
 }
 
-@media only screen and (min-width: 993px) and (max-width: 1070px) {
+@media only screen and (min-width: 350px) and (max-width: 504px) {
   .fa-angle-right {
-    right: -88%;
+    left: 81%;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .fa-angle-left,
+  .fa-angle-right {
+    font-size: 80px;
+  }
+  .fa-angle-right {
+    left: 91%;
+  }
+  .fa-angle-left {
+    left: 5%;
+    top: 49%;
+  }
+  .carousel-notes {
+    left: 52%;
+    top: 78%;
   }
 }
