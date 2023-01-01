@@ -5,12 +5,12 @@ import Imagphon from "../../assets/images/imgMobil.png";
 import useMediaQuery from "../utile/MediaQuery";
 import "../../assets/sass/pages/_about.scss";
 
-const About = () => {
+const About = ({ dataAbout }) => {
   const matches = useMediaQuery("(max-width:767px)");
   return (
     <div className="aboutCollapses">
       {matches ? <Picture img={Imagphon} /> : <Picture img={Mountains} />}
-      <Collapses />
+      <Collapses dataAbout={dataAbout} />
     </div>
   );
 };

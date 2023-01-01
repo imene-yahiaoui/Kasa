@@ -1,5 +1,5 @@
-import { useState } from "react";
-import {  useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Carrousel from "./carrousel";
 import Info from "./info";
 import Tag from "./tag";
@@ -10,26 +10,17 @@ import Host from "./Host";
 import NotFound from "../notFound/NotFound";
 
 const Housing = ({ posts }) => {
-  
+  const [index, setCurrentindex] = useState(0);
 
-  const linkUrl = useLocation();
-  console.log(linkUrl)
-  const idLinkUrl = posts.filter((item) =>item.id === linkUrl.pathname.substring(9));
+  const [error, setError] = useState(false);
 
- 
-  console.log(linkUrl.pathname.substring(9))
+  ////recuperer le ID
+  const { id } = useParams();
 
- const id= linkUrl.pathname.substring(9)
- console.log("id=========",id)
- console.log("idLinkUrl=========",idLinkUrl)
- console.log("linkUrll=========",linkUrl)
-
-
-
+  ///slidesLenghth
   const slidesLenghth = posts
     .filter((post) => post.id === id)
     .map((post) => post.pictures.length);
-  const [index, setCurrentindex] = useState(0);
 
   /// function presedent
   const goToPrevious = () => {
@@ -78,117 +69,162 @@ const Housing = ({ posts }) => {
     grey: "#f6f6f6",
     red: "#ff6060",
   };
-console.log(idLinkUrl.length)
+
+  ///////////
+
+  const invalidId = id.match(/^[a-z0-9]{8}$/i) === null;
+
+  useEffect(() => {
+    if (!invalidId) {
+      const getCurrentAccommodationData = async () => {
+        try {
+          let data = {};
+          const response = await fetch("../../data.json");
+
+          if (response.ok) {
+            data = await response.json();
+
+            const currentAccommodationData = data.find(
+              (accommodation) => accommodation.id === id
+            );
+
+            if (currentAccommodationData === undefined) {
+              setError(true);
+            }
+          }
+        } catch (err) {
+          setError(true);
+        } finally {
+        }
+      };
+
+      getCurrentAccommodationData();
+    }
+  });
+  ///////////////
+
+  if (invalidId) {
+    return <NotFound />;
+  }
+
   return (
-
-    idLinkUrl.length > 0 ? (
-     
-
-
-    <div>
-      <div className="carrousel_imgs">
-        {posts
-          .filter((post) => post.id === id)
-          .map((post) => (
-            <Carrousel slides={post.pictures[index]} key={post.id} />
-          ))}
-
-        {posts
-          .filter((post) => post.id === id)
-          .map((post) => (
-            <i
-              style={{ display: post.pictures.length === 1 ? "none" : "block" }}
-              key={post.id}
-              className="fa-solid fa-angle-left"
-              onClick={goToPrevious}
-            ></i>
-          ))}
-        {posts
-          .filter((post) => post.id === id)
-          .map((post) => (
-            <i
-              style={{ display: post.pictures.length === 1 ? "none" : "block" }}
-              key={post.id}
-              className="fa-solid fa-angle-right"
-              onClick={goToNext}
-            ></i>
-          ))}
-
-        {posts
-          .filter((post) => post.id === id)
-          .map((post) => (
-            <p
-              style={{ display: post.pictures.length === 1 ? "none" : "flex" }}
-              key={post.id}
-              className="carousel-notes"
-            >
-              {[index + 1]}/{post.pictures.length}
-            </p>
-          ))}
-      </div>
-      <div className="containerInfo">
-        <div className="containerTagInfo">
-          {posts
-            .filter((post) => post.id === id)
-            .map((post) => (
-              <Info title={post.title} location={post.location} key={post.id} />
-            ))}
-
-          <ul className="tags">{tag}</ul>
-        </div>
-
-        <div className="containerHostStars">
-          <div className="host">
+    <section>
+      {error ? (
+        <NotFound />
+      ) : (
+        <div>
+          <div className="carrousel_imgs">
             {posts
               .filter((post) => post.id === id)
               .map((post) => (
-                <Host
+                <Carrousel slides={post.pictures[index]} key={post.id} />
+              ))}
+            <div className="carrousel_icones">
+              {posts
+                .filter((post) => post.id === id)
+                .map((post) => (
+                  <i
+                    style={{
+                      display: post.pictures.length === 1 ? "none" : "block",
+                    }}
+                    key={post.id}
+                    className="fa-solid fa-angle-left"
+                    onClick={goToPrevious}
+                  ></i>
+                ))}
+              {posts
+                .filter((post) => post.id === id)
+                .map((post) => (
+                  <i
+                    style={{
+                      display: post.pictures.length === 1 ? "none" : "block",
+                    }}
+                    key={post.id}
+                    className="fa-solid fa-angle-right"
+                    onClick={goToNext}
+                  ></i>
+                ))}
+
+              {posts
+                .filter((post) => post.id === id)
+                .map((post) => (
+                  <p
+                    style={{
+                      display: post.pictures.length === 1 ? "none" : "flex",
+                    }}
+                    key={post.id}
+                    className="carousel-notes"
+                  >
+                    {[index + 1]}/{post.pictures.length}
+                  </p>
+                ))}
+            </div>
+          </div>
+          <div className="containerInfo">
+            <div className="containerTagInfo">
+              {posts
+                .filter((post) => post.id === id)
+                .map((post) => (
+                  <Info
+                    title={post.title}
+                    location={post.location}
+                    key={post.id}
+                  />
+                ))}
+
+              <ul className="tags">{tag}</ul>
+            </div>
+
+            <div className="containerHostStars">
+              <div className="host">
+                {posts
+                  .filter((post) => post.id === id)
+                  .map((post) => (
+                    <Host
+                      key={post.id}
+                      picture={post.host.picture}
+                      name={post.host.name}
+                    />
+                  ))}
+              </div>
+              <div className="star">
+                {stars.map((_, rating) => {
+                  return (
+                    <Stars
+                      key={rating}
+                      color={Rating > rating ? colorStars.red : colorStars.grey}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          <div className="collapseHosing">
+            {posts
+              .filter((post) => post.id === id)
+              .map((post) => (
+                <Collapse
+                  title={"description"}
+                  text={post.description}
                   key={post.id}
-                  picture={post.host.picture}
-                  name={post.host.name}
                 />
               ))}
-          </div>
-          <div className="star">
-            {stars.map((_, rating) => {
-              return (
-                <Stars
-                  key={rating}
-                  color={Rating > rating ? colorStars.red : colorStars.grey}
+            {posts
+              .filter((post) => post.id === id)
+              .map((post) => (
+                <Collapse
+                  title={"Équipements"}
+                  ArryText={post.equipments.map((equipment) => (
+                    <li key={equipment}>{equipment}</li>
+                  ))}
+                  key={post.id}
                 />
-              );
-            })}
+              ))}
           </div>
         </div>
-      </div>
-
-      <div className="collapseHosing">
-        {posts
-          .filter((post) => post.id === id)
-          .map((post) => (
-            <Collapse
-              title={"description"}
-              text={post.description}
-              key={post.id}
-            />
-          ))}
-        {posts
-          .filter((post) => post.id === id)
-          .map((post) => (
-            <Collapse
-              title={"Équipements"}
-              ArryText={post.equipments.map((equipment) => (
-                <li key={equipment}>{equipment}</li>
-              ))}
-              key={post.id}
-            />
-          ))}
-      </div>
-    </div>
-
-  ) : ( <NotFound />
-         )
-
+      )}
+    </section>
   );
 };
 

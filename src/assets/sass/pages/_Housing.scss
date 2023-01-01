@@ -19,12 +19,12 @@
   transform: translate(0, -50%);
 }
 .fa-angle-left {
-  left: 5%;
-  top: -196px;
+  left: 84%;
+  top: -215px;
 }
 .fa-angle-right {
-  right: -90%;
-  top: -318px;
+  top: -334px;
+  left: 1264px;
 }
 
 .carrousel_imgs {
@@ -70,6 +70,9 @@
   margin: 0 auto;
   padding-top: 12px;
 }
+.carrousel_icones {
+  position: absolute;
+}
 
 @include pour_tablet {
   .carrousel_imgs {
@@ -99,7 +102,9 @@
     font-size: 51px;
   }
   .carousel-notes {
-    bottom: 165px;
+    position: absolute;
+    left: 676px;
+    bottom: 252px;
   }
 
   .fa-angle-left {
