@@ -119,46 +119,45 @@ const Housing = ({ posts }) => {
               .map((post) => (
                 <Carrousel slides={post.pictures[index]} key={post.id} />
               ))}
-           
-              {posts
-                .filter((post) => post.id === id)
-                .map((post) => (
-                  <i
-                    style={{
-                      display: post.pictures.length === 1 ? "none" : "block",
-                    }}
-                    key={post.id}
-                    className="fa-solid fa-angle-left"
-                    onClick={goToPrevious}
-                  ></i>
-                ))}
-              {posts
-                .filter((post) => post.id === id)
-                .map((post) => (
-                  <i
-                    style={{
-                      display: post.pictures.length === 1 ? "none" : "block",
-                    }}
-                    key={post.id}
-                    className="fa-solid fa-angle-right"
-                    onClick={goToNext}
-                  ></i>
-                ))}
 
-              {posts
-                .filter((post) => post.id === id)
-                .map((post) => (
-                  <p
-                    style={{
-                      display: post.pictures.length === 1 ? "none" : "flex",
-                    }}
-                    key={post.id}
-                    className="carousel-notes"
-                  >
-                    {[index + 1]}/{post.pictures.length}
-                  </p>
-                ))}
-           
+            {posts
+              .filter((post) => post.id === id)
+              .map((post) => (
+                <i
+                  style={{
+                    display: post.pictures.length === 1 ? "none" : "block",
+                  }}
+                  key={post.id}
+                  className="fa-solid fa-angle-left"
+                  onClick={goToPrevious}
+                ></i>
+              ))}
+            {posts
+              .filter((post) => post.id === id)
+              .map((post) => (
+                <i
+                  style={{
+                    display: post.pictures.length === 1 ? "none" : "block",
+                  }}
+                  key={post.id}
+                  className="fa-solid fa-angle-right"
+                  onClick={goToNext}
+                ></i>
+              ))}
+
+            {posts
+              .filter((post) => post.id === id)
+              .map((post) => (
+                <p
+                  style={{
+                    display: post.pictures.length === 1 ? "none" : "flex",
+                  }}
+                  key={post.id}
+                  className="carousel-notes"
+                >
+                  {[index + 1]}/{post.pictures.length}
+                </p>
+              ))}
           </div>
           <div className="containerInfo">
             <div className="containerTagInfo">

@@ -4,7 +4,9 @@ import "../../assets/sass/layout/_header.scss";
 const Header = () => {
   return (
     <div className="header">
-      <img className="logo" src={logo} alt="logo Kasa"></img>
+      <Link to="/">
+        <img className="logo" src={logo} alt="logo Kasa"></img>
+      </Link>
       <ul className="nav">
         <li>
           <Link to="/">Accueil</Link>
