@@ -3,7 +3,6 @@ import Home from "../home/Home";
 import Housing from "../housing/Housing";
 import About from "../about/About";
 import NotFound from "../notFound/NotFound";
-// import Test from "../housing/test"
 
 const RoutesPath = ({ posts, dataAbout }) => {
   return (

@@ -2,6 +2,7 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import RoutesPath from "./components/RoutesPath/RoutesPath";
 import { useState, useEffect } from "react";
+import "./assets/sass/pages/_App.scss";
 
 const App = () => {
   const [posts, setPosts] = useState([]);
@@ -46,8 +47,10 @@ const App = () => {
 
   return (
     <div>
+      <div className="App">
       <Header />
       <RoutesPath posts={posts} dataAbout={dataAbout} />
+      </div>
       <Footer />
     </div>
   );
